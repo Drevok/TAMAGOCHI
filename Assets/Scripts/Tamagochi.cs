@@ -22,7 +22,6 @@ namespace Propriétés
     public class TAMA
     {
         private int _health;
-
         public bool IsDead {get; private set;}
 
         public int Health
@@ -64,7 +63,6 @@ namespace Propriétés
         }
 
         private int _tiredness;
-
         public bool IsTired {get; private set;}
 
         public int Tiredness
@@ -81,7 +79,16 @@ namespace Propriétés
                 {
                     IsTired = true;
                 }
+
             }
+        }
+
+        private int _boredom;
+        public bool IsBored {get; private set;}
+
+        public int _boredom
+        {
+            
         }
 
     }
