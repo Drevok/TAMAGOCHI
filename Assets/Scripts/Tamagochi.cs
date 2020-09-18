@@ -10,8 +10,25 @@ namespace Propriétés
         public void TimeCount()
         {
             tama.Hunger --;
+            if (tama.IsHungry == true)
+            {
+                tama.Health --;
+            }
+            tama.Tiredness --;
+            if (tama.IsTired == true)
+            {
+                tama.Health --;        
+            }
+            tama.Boredom --;
+            if (tama.IsBored == true)
+            {
+                tama.Tiredness --;
+            }
 
+            Debug.Log("Il me reste" + tama.Health + "points de vie");
             Debug.Log("Il me reste " + tama.Hunger + "points de faim");
+            Debug.Log("Il me reste " + tama.Tiredness + "points de fatigue");
+            Debug.Log("Il me reste " + tama.Boredom + "points de fatigue");
         }
         public TAMA tama = new TAMA();
         void Start()
