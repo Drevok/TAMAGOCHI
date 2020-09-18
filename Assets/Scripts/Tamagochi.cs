@@ -8,7 +8,10 @@ namespace Propriétés
     public class Tamagochi : MonoBehaviour
     {
 
-        public TextMeshProUGUI EventText;
+        public TextMeshProUGUI HungerText;
+        public TextMeshProUGUI TirednessText;
+        public TextMeshProUGUI BoredomText;
+        public TextMeshProUGUI DeathText;
 
         public void TimeCount()
         {
@@ -16,19 +19,19 @@ namespace Propriétés
             if (tama.IsHungry == true)
             {
                 tama.Health --;
-                EventText.text ="G FAIM";
+                HungerText.text ="G FAIM";
             }
             tama.Tiredness --;
             if (tama.IsTired == true)
             {
                 tama.Health --;  
-                EventText.text = "VEUX DORMIR";  
+                TirednessText.text = "VEUX DORMIR";  
             }
             tama.Boredom --;
             if (tama.IsBored == true)
             {
                 tama.Tiredness --;
-                EventText.text = "M'ENNUIE";
+                BoredomText.text = "M'ENNUIE";
             }
 
             Debug.Log("Il me reste" + tama.Health + "points de vie");
@@ -60,8 +63,11 @@ namespace Propriétés
 
             if (tama.IsDead == true)
             {
-                EventText.text = "JSUI MOR";
+                DeathText.text = "JSUI MOR";
                 CancelInvoke("TimeCount");
+                Hunger.text = "";
+                TirednessText.text = "";
+                BoredomText.text = "";
             }
 
         }
