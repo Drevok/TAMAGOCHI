@@ -6,16 +6,21 @@ namespace Propriétés
 {
     public class Tamagochi : MonoBehaviour
     {
-        // Start is called before the first frame update
+
+        public float time;
+
+        public TAMA tama = new TAMA();
         void Start()
         {
-            
+            time = 0;
         }
 
         // Update is called once per frame
         void Update()
         {
-            
+            time += Time.deltaTime;
+
+            Debug.Log("Il s'est passé " + time + "secondes");
         }
     }
 
@@ -88,7 +93,19 @@ namespace Propriétés
 
         public int _boredom
         {
-            
+            get
+            {
+                return _boredom;
+            }
+
+            set
+            {
+                _boredom = value;
+                if (_boredom < 50)
+                {
+                    IsBored =true;
+                }
+            }
         }
 
     }
