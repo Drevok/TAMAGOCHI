@@ -7,37 +7,34 @@ namespace Propriétés
     public class Tamagochi : MonoBehaviour
     {
 
-        public float time;
-
-        public void TimeCount ()
+        public void TimeCount()
         {
-            time += Time.deltaTime;
-            tama.Hunger -- ;
-        }
+            tama.Hunger --;
 
+            Debug.Log("Il me reste " + tama.Hunger + "points de faim");
+        }
         public TAMA tama = new TAMA();
         void Start()
         {
-            time = 0;
 
             tama.Health = tama.MaxHealth;
             tama.Hunger = tama.MaxHunger;
             tama.Tiredness = tama.MaxTiredness;
             tama.Boredom = tama.MaxBoredom;
+
+            InvokeRepeating ("TimeCount", 0f, 1f);
+
         }
 
         // Update is called once per frame
         void Update()
         { 
 
-            TimeCount();
-
-            Debug.Log("Il me reste " + tama.Hunger + "points de faim");
-
             if (tama.IsDead == true)
             {
                 Debug.Log("Je suis ded");
             }
+
         }
     }
 
