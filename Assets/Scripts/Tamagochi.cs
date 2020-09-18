@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 namespace Propriétés
 {
     public class Tamagochi : MonoBehaviour
     {
+
+        public TextMeshProUGUI EventText;
 
         public void TimeCount()
         {
@@ -13,6 +16,7 @@ namespace Propriétés
             if (tama.IsHungry == true)
             {
                 tama.Health --;
+                EventText.text ="G FAIM";
             }
             tama.Tiredness --;
             if (tama.IsTired == true)
@@ -30,12 +34,15 @@ namespace Propriétés
             Debug.Log("Il me reste " + tama.Tiredness + "points de fatigue");
             Debug.Log("Il me reste " + tama.Boredom + "points de fatigue");
         }
+
         public TAMA tama = new TAMA();
         void Start()
         {
 
-            tama.Health = tama.MaxHealth;
-            tama.Hunger = tama.MaxHunger;
+            //tama.Health = tama.MaxHealth;
+            tama.Health = 5;
+            //tama.Hunger = tama.MaxHunger;
+            tama.Hunger = 0;
             tama.Tiredness = tama.MaxTiredness;
             tama.Boredom = tama.MaxBoredom;
 
@@ -49,7 +56,8 @@ namespace Propriétés
 
             if (tama.IsDead == true)
             {
-                Debug.Log("Je suis ded");
+                EventText.text == "JSUI MOR";
+                CancelInvoke("TimeCount");
             }
 
         }
