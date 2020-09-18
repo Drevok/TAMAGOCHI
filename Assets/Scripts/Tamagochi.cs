@@ -21,12 +21,14 @@ namespace Propriétés
             tama.Tiredness --;
             if (tama.IsTired == true)
             {
-                tama.Health --;        
+                tama.Health --;  
+                EventText.text = "VEUX DORMIR";  
             }
             tama.Boredom --;
             if (tama.IsBored == true)
             {
                 tama.Tiredness --;
+                EventText.text = "M'ENNUIE";
             }
 
             Debug.Log("Il me reste" + tama.Health + "points de vie");
@@ -40,11 +42,13 @@ namespace Propriétés
         {
 
             //tama.Health = tama.MaxHealth;
-            tama.Health = 5;
+            tama.Health = 55;
             //tama.Hunger = tama.MaxHunger;
-            tama.Hunger = 0;
-            tama.Tiredness = tama.MaxTiredness;
-            tama.Boredom = tama.MaxBoredom;
+            tama.Hunger = 55;
+            //tama.Tiredness = tama.MaxTiredness;
+            tama.Tiredness = 10;
+            //tama.Boredom = tama.MaxBoredom;
+            tama.Boredom = 10;
 
             InvokeRepeating ("TimeCount", 0f, 1f);
 
@@ -56,7 +60,7 @@ namespace Propriétés
 
             if (tama.IsDead == true)
             {
-                EventText.text == "JSUI MOR";
+                EventText.text = "JSUI MOR";
                 CancelInvoke("TimeCount");
             }
 
