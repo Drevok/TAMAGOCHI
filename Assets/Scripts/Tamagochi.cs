@@ -9,10 +9,17 @@ namespace Propriétés
 
         public float time;
 
+        public void TimeCount ()
+        {
+            time += Time.deltaTime;
+            tama.Hunger -- ;
+        }
+
         public TAMA tama = new TAMA();
         void Start()
         {
             time = 0;
+
             tama.Health = tama.MaxHealth;
             tama.Hunger = tama.MaxHunger;
             tama.Tiredness = tama.MaxTiredness;
@@ -21,10 +28,9 @@ namespace Propriétés
 
         // Update is called once per frame
         void Update()
-        {
-            time += Time.deltaTime;
+        { 
 
-            tama.Hunger -- ;
+            TimeCount();
 
             Debug.Log("Il me reste " + tama.Hunger + "points de faim");
 
@@ -78,7 +84,7 @@ namespace Propriétés
                     IsHungry = true;
                 }
 
-                if (Hunger <= 0)
+                if (_hunger <= 0)
                 {
                     IsDead = true;
                 }
