@@ -24,15 +24,21 @@ namespace Propriétés
         {
             time += Time.deltaTime;
 
-            
+            tama.Hunger -- ;
 
+            Debug.Log("Il me reste " + tama.Hunger + "points de faim");
+
+            if (tama.IsDead == true)
+            {
+                Debug.Log("Je suis ded");
+            }
         }
     }
 
     public class TAMA
     {
         private int _health;
-        private int MaxHealth = 100;
+        public int MaxHealth = 100;
         public bool IsDead {get; private set;}
 
         public int Health
@@ -54,7 +60,7 @@ namespace Propriétés
         }
 
         private int _hunger;
-        private int MaxHunger = 100;
+        public int MaxHunger = 100;
         public bool IsHungry {get; private set;}
 
         public int Hunger
@@ -71,11 +77,16 @@ namespace Propriétés
                 {
                     IsHungry = true;
                 }
+
+                if (Hunger <= 0)
+                {
+                    IsDead = true;
+                }
             }
         }
 
         private int _tiredness;
-        private int MaxTiredness = 100;
+        public int MaxTiredness = 100;
         public bool IsTired {get; private set;}
 
         public int Tiredness
@@ -97,7 +108,7 @@ namespace Propriétés
         }
 
         private int _boredom;
-        private int MaxBoredom = 100;
+        public int MaxBoredom = 100;
         public bool IsBored {get; private set;}
 
         public int Boredom
