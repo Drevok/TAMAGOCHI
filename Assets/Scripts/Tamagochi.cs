@@ -65,7 +65,7 @@ namespace Propriétés
             {
                 DeathText.text = "JSUI MOR";
                 CancelInvoke("TimeCount");
-                Hunger.text = "";
+                HungerText.text = "";
                 TirednessText.text = "";
                 BoredomText.text = "";
             }
