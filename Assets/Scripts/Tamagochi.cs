@@ -91,7 +91,7 @@ namespace Propriétés
         private int _boredom;
         public bool IsBored {get; private set;}
 
-        public int _boredom
+        public int Boredom
         {
             get
             {
