@@ -61,16 +61,28 @@ namespace Propriétés
         public void AddHunger()
         {
            tama.Hunger += 20; 
+           if (tama.Hunger >= tama.MaxHunger)
+           {
+               tama.Hunger = tama.Hunger;
+           }
         }
 
         public void AddTiredness()
         {
            tama.Tiredness += 20; 
+           if (tama.Tiredness >= tama.MaxTiredness)
+           {
+               tama.Tiredness = tama.MaxBoredom;
+           }
         }
 
         public void AddBoredom()
         {
-           tama.Boredom += 20; 
+           tama.Boredom += 20;
+           if (tama.Boredom >= tama.MaxBoredom)
+           {
+               tama.Boredom = tama.MaxBoredom;
+           } 
         }
         void Start()
         {
