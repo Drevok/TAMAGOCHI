@@ -28,13 +28,21 @@ namespace Propriétés
                 tama.Health --;
                 HungerText.text ="G FAIM";
             }
-            tama.Tiredness --;
+            if (tama.Hunger <=0)
+            {
+                tama.Health = 0;
+            }
+            tama.Tiredness -= 2;
+            if (tama.Tiredness <=0)
+            {
+                tama.Health = 0;
+            }
             if (tama.IsTired == true)
             {
                 tama.Health --;  
                 TirednessText.text = "VEUX DORMIR";  
             }
-            tama.Boredom --;
+            tama.Boredom -= 3;
             if (tama.IsBored == true)
             {
                 tama.Tiredness --;
@@ -78,12 +86,11 @@ namespace Propriétés
                 TirednessText.text = "";
                 BoredomText.text = "";
 
+            }
 
             HungerBar.fillAmount = tama.Hunger /100f;
             TirednessBar.fillAmount = tama.Tiredness /100f;
             BoredomBar.fillAmount = tama.Boredom /100f;
-
-            }
 
         }
     }
