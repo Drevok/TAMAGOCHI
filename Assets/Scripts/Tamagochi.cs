@@ -58,6 +58,20 @@ namespace Propriétés
         }
 
         public TAMA tama = new TAMA();
+        public void AddHunger()
+        {
+           tama.Hunger += 20; 
+        }
+
+        public void AddTiredness()
+        {
+           tama.Tiredness += 20; 
+        }
+
+        public void AddBoredom()
+        {
+           tama.Boredom += 20; 
+        }
         void Start()
         {
 
@@ -187,5 +201,6 @@ namespace Propriétés
                 }
             }
         }
+        
     }
 }
