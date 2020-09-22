@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BUTTONS
+    uniqueID: 2560542181
+    locked: 0
+  - name: DECOR
+    uniqueID: 1013283243
+    locked: 0
