@@ -46,9 +46,6 @@ namespace Propriétés
             Debug.Log("Il me reste " + tama.Tiredness + "points de fatigue");
             Debug.Log("Il me reste " + tama.Boredom + "points de fatigue");
 
-            HungerBar.fillAmount = tama.Hunger;
-            TirednessBar.fillAmount = tama.Tiredness;
-            BoredomBar.fillAmount = tama.Boredom;
 
         }
 
@@ -80,6 +77,12 @@ namespace Propriétés
                 HungerText.text = "";
                 TirednessText.text = "";
                 BoredomText.text = "";
+
+
+            HungerBar.fillAmount = tama.Hunger /100f;
+            TirednessBar.fillAmount = tama.Tiredness /100f;
+            BoredomBar.fillAmount = tama.Boredom /100f;
+
             }
 
         }
